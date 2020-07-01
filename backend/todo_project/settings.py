@@ -33,11 +33,10 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     # Local
     'todos.apps.TodosConfig',
-    
 
     # 3rd party
     'rest_framework',
-    'corsheaders',# CORS 追加
+    'corsheaders',# 追加
 
     'django.contrib.admin',
     'django.contrib.auth',
@@ -46,15 +45,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 ]
-
-# Setting permission
-#REST_FRAMEWORK = {
-#   'DEFAULT_PERMISSION_CLASSES': [
-#        'rest_framework.permissions.AllowAny',
-#    ]
-#}
-
-
 
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',# 追加
@@ -67,10 +57,10 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
-# 追加
-CORS_ORIGIN_WHITELIST = (
-    'localhost:3000/'
-)
+
+CORS_ORIGIN_WHITELIST = [
+    'http://localhost:3000'
+]
 
 
 ROOT_URLCONF = 'todo_project.urls'
